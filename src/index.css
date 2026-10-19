@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-950 text-slate-200 overflow-x-hidden font-sans;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.08) 0%, transparent 60%),
+      radial-gradient(circle at 100% 40%, rgba(0, 240, 255, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 0% 70%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #06070a;
+}
+::-webkit-scrollbar-thumb {
+  background: #202638;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #323a54;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(16, 19, 28, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-glow {
+  background: rgba(16, 19, 28, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 35px -5px rgba(0, 240, 255, 0.15);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(22, 26, 38, 0.75) 0%, rgba(11, 13, 19, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 240, 255, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Studio timeline grid effect */
+.studio-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Gradient text */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400;
+}
+
+.text-gradient-cyan {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-cyan via-teal-300 to-emerald-400;
+}
+
+.text-gradient-purple {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-cyan via-brand-neon to-brand-pink;
+}
+
+/* Video mask and aspect ratios */
+.aspect-9-16 {
+  aspect-ratio: 9 / 16;
+}
+
+.aspect-16-9 {
+  aspect-ratio: 16 / 9;
+}
