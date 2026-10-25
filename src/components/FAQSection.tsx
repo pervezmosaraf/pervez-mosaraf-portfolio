@@ -10,8 +10,12 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-24 bg-dark-900/40 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-24 bg-dark-900/40 relative overflow-hidden">
+      
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-blue/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center mb-14">
@@ -22,7 +26,7 @@ export const FAQSection: React.FC = () => {
           <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-4">
             Everything You Need <span className="text-gradient-cyan">To Know</span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="font-sans text-slate-400 text-sm sm:text-base leading-relaxed">
             Got questions about file formats, revision speed, or licensing? Here are the answers.
           </p>
         </div>
@@ -38,7 +42,7 @@ export const FAQSection: React.FC = () => {
               >
                 <button
                   onClick={() => toggle(index)}
-                  className="w-full py-5 px-6 text-left flex items-center justify-between gap-4 text-white hover:text-brand-cyan transition-colors"
+                  className="w-full py-5 px-6 text-left flex items-center justify-between gap-4 text-white hover:text-brand-cyan transition-colors cursor-pointer"
                 >
                   <span className="font-display font-semibold text-base sm:text-lg">
                     {faq.q}
@@ -51,7 +55,7 @@ export const FAQSection: React.FC = () => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-slate-300 text-sm sm:text-base leading-relaxed border-t border-white/5 animate-in fade-in duration-200">
+                  <div className="px-6 pb-6 pt-1 text-slate-300 font-sans text-sm sm:text-base leading-relaxed border-t border-white/5 animate-in fade-in duration-200">
                     {faq.a}
                   </div>
                 )}

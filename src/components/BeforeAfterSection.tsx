@@ -28,19 +28,23 @@ export const BeforeAfterSection: React.FC = () => {
   };
 
   return (
-    <section id="before-after" className="py-24 bg-dark-900/60 border-y border-white/5 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="before-after" className="py-24 bg-dark-900/60 border-y border-white/5 relative overflow-hidden">
+      
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-brand-blue/10 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-neon/10 border border-brand-neon/30 text-brand-neon text-xs font-semibold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             The Edit Magic
           </div>
           <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-4">
-            Interactive <span className="text-gradient-purple">Before & After</span>
+            Interactive <span className="text-gradient-cyan">Before & After</span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
+          <p className="font-sans text-slate-400 text-sm sm:text-base leading-relaxed">
             Drag the slider to see how raw, flat camera files are transformed into high-impact, color-graded masterpieces with motion graphics and sound design.
           </p>
 
@@ -50,9 +54,9 @@ export const BeforeAfterSection: React.FC = () => {
               <button
                 key={pair.id}
                 onClick={() => setActivePairIndex(idx)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
+                className={`px-4 py-2 rounded-full text-xs font-display font-semibold transition-all cursor-pointer ${
                   activePairIndex === idx
-                    ? 'bg-white text-dark-950 font-bold shadow-md'
+                    ? 'bg-gradient-to-r from-brand-cyan to-brand-blue text-dark-950 font-bold shadow-md'
                     : 'glass-panel text-slate-300 hover:text-white'
                 }`}
               >
@@ -95,7 +99,7 @@ export const BeforeAfterSection: React.FC = () => {
               />
               {/* Raw Label */}
               <div className="absolute top-4 left-4 z-20">
-                <span className="px-3 py-1 rounded-md bg-dark-950/80 backdrop-blur-md text-xs font-bold text-slate-300 border border-white/10 uppercase tracking-wider">
+                <span className="px-3 py-1 rounded-md bg-dark-950/80 backdrop-blur-md text-xs font-bold text-slate-300 border border-white/10 uppercase tracking-wider font-mono">
                   Raw Flat Footage
                 </span>
               </div>
@@ -103,7 +107,7 @@ export const BeforeAfterSection: React.FC = () => {
 
             {/* Edited Label */}
             <div className="absolute top-4 right-4 z-20">
-              <span className="px-3 py-1 rounded-md bg-brand-cyan/90 text-dark-950 text-xs font-extrabold uppercase tracking-wider shadow-lg">
+              <span className="px-3 py-1 rounded-md bg-gradient-to-r from-brand-cyan to-brand-blue text-dark-950 text-xs font-display font-extrabold uppercase tracking-wider shadow-lg">
                 Final Master + Color VFX
               </span>
             </div>
@@ -113,7 +117,7 @@ export const BeforeAfterSection: React.FC = () => {
               className="absolute inset-y-0 z-30 pointer-events-none"
               style={{ left: `${sliderPosition}%` }}
             >
-              <div className="absolute inset-y-0 -translate-x-1/2 w-0.5 bg-brand-cyan shadow-[0_0_15px_rgba(0,240,255,0.8)]" />
+              <div className="absolute inset-y-0 -translate-x-1/2 w-0.5 bg-brand-cyan shadow-[0_0_15px_rgba(56,189,248,0.8)]" />
               <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-dark-950 border-2 border-brand-cyan shadow-xl flex items-center justify-center text-brand-cyan pointer-events-auto">
                 <Sliders className="w-4 h-4 rotate-90" />
               </div>
@@ -121,7 +125,7 @@ export const BeforeAfterSection: React.FC = () => {
 
             {/* Instruction tooltip at bottom */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-              <span className="px-4 py-1.5 rounded-full bg-dark-950/80 backdrop-blur-md text-xs font-medium text-slate-300 border border-white/10">
+              <span className="px-4 py-1.5 rounded-full bg-dark-950/80 backdrop-blur-md text-xs font-sans font-medium text-slate-300 border border-white/10">
                 Drag slider left / right to compare
               </span>
             </div>
@@ -133,15 +137,15 @@ export const BeforeAfterSection: React.FC = () => {
               <h3 className="text-white font-display font-bold text-lg">
                 {currentPair.title}
               </h3>
-              <p className="text-sm text-slate-400 mt-1">
+              <p className="font-sans text-sm text-slate-400 mt-1">
                 {currentPair.details}
               </p>
             </div>
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex items-center gap-3 shrink-0 font-sans">
               <span className="flex items-center gap-1.5 text-xs text-brand-cyan font-semibold">
                 <CheckCircle className="w-4 h-4" /> 100% Broadcast Ready
               </span>
-              <span className="flex items-center gap-1.5 text-xs text-brand-neon font-semibold">
+              <span className="flex items-center gap-1.5 text-xs text-sky-400 font-semibold">
                 <Zap className="w-4 h-4" /> 4K 10-Bit Color
               </span>
             </div>

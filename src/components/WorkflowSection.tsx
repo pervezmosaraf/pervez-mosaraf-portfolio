@@ -1,93 +1,110 @@
 import React from 'react';
-import { WORKFLOW_STEPS } from '../data/portfolioData';
-import { Target, Scissors, Layers, Volume2, CheckCircle2, Film } from 'lucide-react';
+import { Target, Scissors, Volume2, CheckCircle2 } from 'lucide-react';
 
 export const WorkflowSection: React.FC = () => {
-  const getIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'Target': return <Target className="w-5 h-5 text-brand-cyan" />;
-      case 'Scissors': return <Scissors className="w-5 h-5 text-brand-neon" />;
-      case 'Layers': return <Layers className="w-5 h-5 text-brand-pink" />;
-      case 'Volume2': return <Volume2 className="w-5 h-5 text-amber-400" />;
-      case 'CheckCircle2': return <CheckCircle2 className="w-5 h-5 text-emerald-400" />;
-      default: return <Film className="w-5 h-5 text-brand-cyan" />;
+  const processSteps = [
+    {
+      step: "01",
+      title: "Concept & Strategy",
+      description: "We analyze your raw footage and craft a scroll-stopping 3-5 second hook to prevent early drop-off.",
+      icon: <Target className="w-5 h-5 text-brand-cyan" />
+    },
+    {
+      step: "02",
+      title: "Creative Production",
+      description: "Tight narrative assembly, cutting all dead air, stutters, and tangents with variable rhythmic pacing.",
+      icon: <Scissors className="w-5 h-5 text-sky-400" />
+    },
+    {
+      step: "03",
+      title: "Sound & Polish",
+      description: "Layering 80+ Foley effects (whooshes, risers, impacts) with custom motion graphics and color grading.",
+      icon: <Volume2 className="w-5 h-5 text-brand-blue" />
+    },
+    {
+      step: "04",
+      title: "Final Delivery",
+      description: "Collaborative timestamped review via Frame.io, fast revisions, and final 4K broadcast-ready export.",
+      icon: <CheckCircle2 className="w-5 h-5 text-emerald-400" />
     }
-  };
+  ];
 
   return (
-    <section id="process" className="py-24 bg-dark-900/40 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="process" className="py-24 relative overflow-hidden bg-dark-900/60 border-t border-white/5">
+      
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-brand-blue/15 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-4">
-            <Film className="w-3.5 h-3.5" />
-            The Studio Pipeline
+            Production Roadmap
           </div>
           <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-4">
-            How Every Video Is <span className="text-gradient-cyan">Engineered</span>
+            Our <span className="text-gradient-cyan">Process</span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
-            A battle-tested production pipeline modeled after top Hollywood editing suites and high-retention creator studios.
+          <p className="font-sans text-slate-400 text-sm sm:text-base leading-relaxed">
+            Precision post-production modeled after top YouTube creators and commercial studios.
           </p>
         </div>
 
-        {/* Timeline Visualization Deck */}
-        <div className="relative">
-          
-          {/* Subtle timeline track indicator for desktop */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-cyan via-brand-neon to-brand-pink -translate-y-1/2 z-0 opacity-20" />
-
-          {/* Workflow Step Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 relative z-10">
-            {WORKFLOW_STEPS.map((step, index) => (
-              <div
-                key={step.step}
-                className="glass-card rounded-2xl p-6 border border-white/5 hover:border-brand-cyan/40 transition-all flex flex-col justify-between group"
-              >
-                <div>
-                  {/* Step Number & Icon */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-2xl font-extrabold text-slate-600 group-hover:text-brand-cyan transition-colors">
-                      {step.step}
-                    </span>
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-brand-cyan/30 transition-all">
-                      {getIcon(step.icon)}
-                    </div>
+        {/* 4 Process Step Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative mb-12">
+          {processSteps.map((step, index) => (
+            <div
+              key={step.step}
+              className="glass-card rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-white/5 hover:border-brand-cyan/40 transition-all flex flex-col justify-between group"
+            >
+              <div>
+                {/* Step Number & Icon */}
+                <div className="flex items-center justify-between mb-5">
+                  <span className="font-mono text-3xl font-extrabold text-slate-600 group-hover:text-brand-cyan transition-colors">
+                    {step.step}
+                  </span>
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:border-brand-cyan/30 transition-all">
+                    {step.icon}
                   </div>
-
-                  {/* Title */}
-                  <h3 className="font-display font-bold text-base text-white mb-2 group-hover:text-brand-cyan transition-colors">
-                    {step.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                    {step.description}
-                  </p>
                 </div>
 
-                {/* Bottom track bar marker */}
-                <div className="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-500 font-mono">
-                  <span>TRACK #{index + 1}</span>
-                  <span className="w-2 h-2 rounded-full bg-brand-cyan/40 group-hover:bg-brand-cyan transition-colors" />
-                </div>
+                {/* Title */}
+                <h3 className="font-display font-bold text-lg text-white mb-2 group-hover:text-brand-cyan transition-colors">
+                  {step.title}
+                </h3>
+
+                {/* Description in Inter */}
+                <p className="font-sans text-xs sm:text-sm text-slate-400 leading-relaxed">
+                  {step.description}
+                </p>
               </div>
-            ))}
-          </div>
 
+              {/* Bottom Track Indicator */}
+              <div className="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+                <span>STAGE #{index + 1}</span>
+                <span className="w-2 h-2 rounded-full bg-brand-cyan/40 group-hover:bg-brand-cyan transition-colors" />
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Simulated NLE Editing Track Footer Bar */}
-        <div className="mt-12 glass-panel rounded-2xl p-4 sm:p-5 border border-white/5 max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
-            <span className="text-xs font-mono text-slate-300">
-              FRAME.IO COLLABORATION READY: 00:14:20:00 [4K PRORES 422 HQ]
-            </span>
+        {/* Reference Design: Progress Timeline Track Bar with Glowing Ticks */}
+        <div className="glass-panel rounded-2xl p-4 sm:p-5 border border-white/5 max-w-4xl mx-auto">
+          <div className="flex items-center justify-between mb-2 text-xs font-mono text-slate-400">
+            <span className="text-brand-cyan font-semibold">01 INGESTION</span>
+            <span>02 ROUGH CUT</span>
+            <span>03 SOUND & VFX</span>
+            <span className="text-emerald-400 font-semibold">04 4K DELIVERY</span>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-brand-cyan font-bold">100% On-Time Delivery Guarantee</span>
+
+          {/* Timeline Bar with glowing ticks */}
+          <div className="w-full h-2.5 rounded-full bg-dark-950 p-0.5 border border-white/10 relative overflow-hidden">
+            <div className="h-full rounded-full bg-gradient-to-r from-brand-cyan via-sky-400 to-brand-blue w-full animate-pulse-subtle" />
+          </div>
+          
+          <div className="flex items-center justify-between mt-3 text-[11px] font-sans text-slate-400">
+            <span>Average turnaround: 24-48 hours for shorts • 3-5 days for long-form</span>
+            <span className="text-brand-cyan font-medium hidden sm:inline">100% On-Time Guarantee</span>
           </div>
         </div>
 

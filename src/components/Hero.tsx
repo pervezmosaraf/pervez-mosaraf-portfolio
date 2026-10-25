@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Play, Sparkles, ArrowRight, Eye, Film, TrendingUp, Zap, Clock } from 'lucide-react';
-import { PERSONAL_INFO, EDITING_TOOLKIT } from '../data/portfolioData';
+import { Play, Sparkles, ArrowRight, Star, Layers, Scissors, Volume2 } from 'lucide-react';
+import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface HeroProps {
   onOpenShowreel: () => void;
@@ -8,60 +8,92 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenShowreel }) => {
   const [isPlayingInline, setIsPlayingInline] = useState(false);
-  return (
-    <section className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 overflow-hidden studio-grid">
-      {/* Ambient background glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-brand-cyan/15 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute top-1/3 left-1/4 w-[400px] h-[300px] bg-brand-neon/15 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-1/4 w-[450px] h-[250px] bg-brand-pink/10 rounded-full blur-[140px] pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+  return (
+    <section className="relative min-h-[96vh] flex flex-col items-center justify-center pt-28 pb-16 overflow-hidden studio-grid">
+      
+      {/* Reference Design: Atmospheric Brand Orbital Glow Rings */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[950px] h-[700px] sm:h-[950px] brand-orbit-glow pointer-events-none -z-10" />
+      
+      {/* Decorative elliptical orbital rings matching reference screenshot */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] h-[320px] sm:h-[420px] rounded-full border border-brand-cyan/20 pointer-events-none -z-10 transform -rotate-6" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] sm:w-[950px] h-[400px] sm:h-[520px] rounded-full border border-brand-blue/15 pointer-events-none -z-10 transform rotate-3" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
         
         {/* Availability Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border border-brand-cyan/30 text-xs font-semibold text-slate-300 mb-8 shadow-lg shadow-brand-cyan/10 animate-fade-in">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border border-brand-cyan/30 text-xs font-semibold text-slate-300 mb-6 shadow-lg shadow-brand-cyan/10">
           <span className="flex h-2 w-2 relative">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-cyan"></span>
           </span>
-          <span className="text-brand-cyan tracking-wide uppercase text-[11px] font-bold">2026 Portfolio</span>
+          <span className="text-brand-cyan tracking-wide uppercase text-[11px] font-bold">Available For Q2/Q3 Projects</span>
           <span className="text-slate-500">•</span>
-          <span>{PERSONAL_INFO.availability}</span>
+          <span className="text-slate-300 font-sans">Full Channel Retainers & Single Edits</span>
         </div>
 
-        {/* Main Headline */}
+        {/* Main Headline (Flow and Typography matching reference design) */}
         <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white max-w-5xl mx-auto leading-[1.08] mb-6">
-          High-Retention <span className="text-gradient-cyan">YouTube Edits</span>, Viral <span className="text-gradient-purple">9:16 Shorts</span> & Motion VFX
+          Editing Stories <br className="hidden sm:inline" />
+          That <span className="text-gradient-cyan">Inspire Audiences</span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-slate-300 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed mb-10 font-normal">
-          I turn raw footage into cinematic, high-retention stories that hook viewers in the first 3 seconds, keep watch-time high, and turn casual scrollers into loyal subscribers.
+        {/* Subtitle in Inter */}
+        <p className="font-sans text-slate-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-8 font-normal">
+          High-retention YouTube video editing, SaaS product motion graphics, and viral 9:16 reels engineered to capture attention in 3 seconds and scale conversions.
         </p>
 
-        {/* CTA Actions */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
-          <button
-            onClick={onOpenShowreel}
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-brand-cyan to-teal-300 hover:from-white hover:to-brand-cyan text-dark-950 font-display font-bold text-base shadow-xl shadow-brand-cyan/25 hover:shadow-brand-cyan/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 group"
-          >
-            <div className="w-6 h-6 rounded-full bg-dark-950/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Play className="w-3.5 h-3.5 text-dark-950 fill-dark-950 translate-x-[1px]" />
-            </div>
-            Watch 2026 Showreel
-          </button>
-
+        {/* Action Buttons & Social Proof Pill (matching reference design layout) */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-14">
           <a
             href="#portfolio"
-            className="w-full sm:w-auto px-8 py-4 rounded-full glass-panel hover:glass-panel-glow text-white font-display font-semibold text-base border border-white/10 hover:border-brand-cyan/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group"
+            className="btn-brand flex items-center justify-center gap-2.5 text-sm px-8 py-4"
           >
-            Explore Projects
-            <ArrowRight className="w-4 h-4 text-brand-cyan group-hover:translate-x-1 transition-transform" />
+            <span>See My Work</span>
+            <ArrowRight className="w-4 h-4" />
           </a>
+
+          {/* Social Proof Badges with Avatars */}
+          <div className="flex items-center gap-3 px-4 py-2.5 rounded-full glass-panel border border-white/10">
+            <div className="flex -space-x-2.5 overflow-hidden">
+              <img className="inline-block h-8 w-8 rounded-full ring-2 ring-dark-950 object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Creator" />
+              <img className="inline-block h-8 w-8 rounded-full ring-2 ring-dark-950 object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Creator" />
+              <img className="inline-block h-8 w-8 rounded-full ring-2 ring-dark-950 object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Creator" />
+            </div>
+            <div className="text-left font-sans">
+              <div className="flex items-center text-amber-400 text-xs">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3 h-3 fill-amber-400" />
+                ))}
+              </div>
+              <span className="text-[11px] text-slate-300 font-medium">4.9/5 from 80+ Creators</span>
+            </div>
+          </div>
         </div>
 
-        {/* Hero Showreel Video Teaser Card */}
-        <div className="max-w-4xl mx-auto mb-16 relative">
-          <div className="relative rounded-2xl overflow-hidden border border-white/15 bg-dark-900 shadow-2xl hover:border-brand-cyan/50 transition-all duration-300">
+        {/* Hero Video Editor Mockup Window (matching reference design card) */}
+        <div className="max-w-4xl mx-auto mb-14 relative group">
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/15 bg-dark-900 shadow-2xl group-hover:border-brand-cyan/40 transition-all duration-300">
+            
+            {/* Top Editor Toolbar */}
+            <div className="flex items-center justify-between px-4 py-2.5 bg-dark-950/80 border-b border-white/10 text-xs text-slate-400">
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
+                <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
+                <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
+                <span className="ml-2 font-mono text-[11px] text-slate-300 hidden sm:inline">
+                  Timeline — {PERSONAL_INFO.showreel.title}
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-brand-blue/20 text-brand-cyan border border-brand-cyan/30">
+                  4K 60FPS
+                </span>
+                <span className="font-mono text-[11px] text-slate-400">00:01:45:12</span>
+              </div>
+            </div>
+
+            {/* Video Area */}
             {isPlayingInline ? (
               <div className="relative aspect-video w-full overflow-hidden bg-black">
                 <iframe
@@ -74,34 +106,33 @@ export const Hero: React.FC<HeroProps> = ({ onOpenShowreel }) => {
               </div>
             ) : (
               <div 
-                className="relative aspect-video w-full overflow-hidden cursor-pointer group"
+                className="relative aspect-video w-full overflow-hidden cursor-pointer"
                 onClick={() => setIsPlayingInline(true)}
               >
                 <img 
                   src={PERSONAL_INFO.showreel.thumbnail} 
                   alt="Featured SaaS Animation Preview" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.8] group-hover:brightness-[0.95]"
+                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700 brightness-[0.8] group-hover:brightness-[0.95]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent" />
                 
-                {/* Center Play Glow Button */}
+                {/* Center Glowing Play Button */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative">
                     <div className="absolute -inset-4 bg-brand-cyan/30 rounded-full blur-xl group-hover:bg-brand-cyan/60 transition-all"></div>
-                    <div className="w-20 h-20 rounded-full bg-brand-cyan text-dark-950 flex items-center justify-center shadow-2xl group-hover:scale-110 active:scale-95 transition-all">
+                    <div className="w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-brand-cyan to-brand-blue text-dark-950 flex items-center justify-center shadow-2xl group-hover:scale-110 active:scale-95 transition-all">
                       <Play className="w-8 h-8 fill-dark-950 text-dark-950 translate-x-[2px]" />
                     </div>
                   </div>
                 </div>
 
-                {/* Badges on Showreel */}
+                {/* Badges on Video Preview */}
                 <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="px-3 py-1 rounded-full bg-dark-950/80 backdrop-blur-md text-xs font-semibold text-brand-cyan border border-brand-cyan/30 flex items-center gap-1.5">
+                  <span className="px-3 py-1 rounded-full bg-dark-950/85 backdrop-blur-md text-xs font-semibold text-brand-cyan border border-brand-cyan/30 flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-brand-cyan" />
-                    Featured Project
+                    Featured SaaS Animation
                   </span>
-                  <span className="px-2.5 py-1 rounded-full bg-brand-neon/80 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider">
-                    SaaS Animation
+                  <span className="px-2.5 py-1 rounded-full bg-brand-blue/80 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider">
+                    Watch Now
                   </span>
                 </div>
 
@@ -110,92 +141,58 @@ export const Hero: React.FC<HeroProps> = ({ onOpenShowreel }) => {
                     <h3 className="text-white font-display font-bold text-lg sm:text-xl">
                       {PERSONAL_INFO.showreel.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-300">
-                      Click to watch instantly — High-converting UI motion graphics & sound design
+                    <p className="text-xs sm:text-sm text-slate-300 font-sans">
+                      Click to play immediately — Clean UI motion graphics, rhythm cuts & sound design
                     </p>
                   </div>
                   <span className="hidden sm:inline-flex px-3 py-1 rounded-md bg-brand-cyan/20 border border-brand-cyan/30 text-xs font-semibold text-brand-cyan">
-                    Watch Now ▶
+                    Watch Reel ▶
                   </span>
                 </div>
               </div>
             )}
-          </div>
-        </div>
 
-        {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-14">
-          <div className="glass-card p-5 rounded-2xl text-left border border-white/5">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-xs uppercase tracking-wider text-slate-400 font-medium">Total Views</span>
-              <Eye className="w-4 h-4 text-brand-cyan" />
-            </div>
-            <div className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
-              {PERSONAL_INFO.stats.totalViews}
-            </div>
-            <div className="text-[11px] text-emerald-400 mt-1 flex items-center gap-1">
-              <TrendingUp className="w-3 h-3" /> Across client channels
-            </div>
-          </div>
-
-          <div className="glass-card p-5 rounded-2xl text-left border border-white/5">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-xs uppercase tracking-wider text-slate-400 font-medium">Videos Delivered</span>
-              <Film className="w-4 h-4 text-brand-neon" />
-            </div>
-            <div className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
-              {PERSONAL_INFO.stats.projectsCompleted}
-            </div>
-            <div className="text-[11px] text-slate-400 mt-1">
-              YouTube + Reels + 3D
-            </div>
-          </div>
-
-          <div className="glass-card p-5 rounded-2xl text-left border border-white/5">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-xs uppercase tracking-wider text-slate-400 font-medium">Avg. Retention</span>
-              <Zap className="w-4 h-4 text-brand-pink" />
-            </div>
-            <div className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
-              {PERSONAL_INFO.stats.avgRetention}
-            </div>
-            <div className="text-[11px] text-brand-cyan mt-1">
-              Targeted hook psychology
-            </div>
-          </div>
-
-          <div className="glass-card p-5 rounded-2xl text-left border border-white/5">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-xs uppercase tracking-wider text-slate-400 font-medium">Fast Turnaround</span>
-              <Clock className="w-4 h-4 text-amber-400" />
-            </div>
-            <div className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
-              {PERSONAL_INFO.stats.avgTurnaround}
-            </div>
-            <div className="text-[11px] text-slate-400 mt-1">
-              Always on deadline
-            </div>
-          </div>
-        </div>
-
-        {/* Tools Marquee Strip */}
-        <div className="border-t border-white/10 pt-8">
-          <p className="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-5">
-            Mastered Software & AI Production Stack
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-4xl mx-auto">
-            {EDITING_TOOLKIT.map((tool) => (
-              <div
-                key={tool.name}
-                className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl glass-panel hover:border-brand-cyan/40 transition-colors text-xs font-medium text-slate-300"
-              >
-                <div className={`w-6 h-6 rounded-md bg-gradient-to-br ${tool.color} flex items-center justify-center text-[10px] font-bold text-white shadow-sm`}>
-                  {tool.icon}
-                </div>
-                <span>{tool.name}</span>
-                <span className="text-[10px] text-slate-500 hidden sm:inline">({tool.category})</span>
+            {/* Bottom Timeline Waveform Track (matching reference editor window) */}
+            <div className="bg-dark-950 px-4 py-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+              <div className="flex items-center gap-2 sm:gap-4 overflow-x-auto">
+                <span className="flex items-center gap-1 text-[11px] text-slate-300 font-sans">
+                  <Scissors className="w-3.5 h-3.5 text-brand-cyan" /> Visual Cut
+                </span>
+                <span className="flex items-center gap-1 text-[11px] text-slate-300 font-sans">
+                  <Volume2 className="w-3.5 h-3.5 text-sky-400" /> Multi-Track SFX
+                </span>
+                <span className="flex items-center gap-1 text-[11px] text-slate-300 font-sans">
+                  <Layers className="w-3.5 h-3.5 text-brand-blue" /> 3D Motion VFX
+                </span>
               </div>
-            ))}
+              <button
+                onClick={onOpenShowreel}
+                className="text-xs text-brand-cyan font-semibold hover:underline hidden sm:inline"
+              >
+                Expand Lightbox ↗
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Platforms & Tools Marquee Strip */}
+        <div className="border-t border-white/10 pt-8 max-w-4xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-5 font-sans">
+            Trusted Production Standards & Software Stack
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-slate-400 text-xs sm:text-sm font-display font-semibold">
+            <span className="hover:text-brand-cyan transition-colors">Premiere Pro</span>
+            <span className="text-slate-600">•</span>
+            <span className="hover:text-brand-cyan transition-colors">After Effects</span>
+            <span className="text-slate-600">•</span>
+            <span className="hover:text-brand-cyan transition-colors">DaVinci Resolve</span>
+            <span className="text-slate-600">•</span>
+            <span className="hover:text-brand-cyan transition-colors">YouTube 16:9</span>
+            <span className="text-slate-600">•</span>
+            <span className="hover:text-brand-cyan transition-colors">Shorts & Reels</span>
+            <span className="text-slate-600">•</span>
+            <span className="hover:text-brand-cyan transition-colors">Runway Gen-3 AI</span>
           </div>
         </div>
 

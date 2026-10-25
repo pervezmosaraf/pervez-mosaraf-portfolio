@@ -3,6 +3,7 @@ import type { ProjectItem } from './types';
 import { PERSONAL_INFO } from './data/portfolioData';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { AboutSection } from './components/AboutSection';
 import { PortfolioGrid } from './components/PortfolioGrid';
 import { BeforeAfterSection } from './components/BeforeAfterSection';
 import { ServicesSection } from './components/ServicesSection';
@@ -15,7 +16,7 @@ import { VideoModal } from './components/VideoModal';
 
 export const App: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
-  const [selectedPackage, setSelectedPackage] = useState<string>('Viral Short-Form Pack');
+  const [selectedService, setSelectedService] = useState<string>('Video Editing');
 
   const handleOpenShowreel = () => {
     const showreelProject: ProjectItem = {
@@ -43,8 +44,8 @@ export const App: React.FC = () => {
     setSelectedProject(showreelProject);
   };
 
-  const handleSelectPackage = (packageTitle: string) => {
-    setSelectedPackage(packageTitle);
+  const handleSelectService = (serviceTitle: string) => {
+    setSelectedService(serviceTitle);
     const contactElem = document.getElementById('contact');
     if (contactElem) {
       contactElem.scrollIntoView({ behavior: 'smooth' });
@@ -56,31 +57,34 @@ export const App: React.FC = () => {
       {/* Sticky Navigation */}
       <Navbar onOpenShowreel={handleOpenShowreel} />
 
-      {/* Main Content Area */}
+      {/* Main Content Area - Matching Reference Design Flow */}
       <main className="flex-grow">
-        {/* Hero Section */}
+        {/* 1. Hero Section */}
         <Hero onOpenShowreel={handleOpenShowreel} />
 
-        {/* Portfolio Showcase Grid (16:9 & 9:16) */}
+        {/* 2. About Section: "Turning Raw Footage Into Pure Art" with Pervez's Photo */}
+        <AboutSection />
+
+        {/* 3. Featured Work: 16:9 Long-Form & 9:16 Shorts/Reels */}
         <PortfolioGrid onSelectProject={(project) => setSelectedProject(project)} />
 
-        {/* Interactive Before & After Editing Demonstration */}
+        {/* 4. Interactive Before & After Editing Demonstration */}
         <BeforeAfterSection />
 
-        {/* Studio Workflow & Production Pipeline */}
-        <WorkflowSection />
-
-        {/* Services & Transparent Pricing */}
-        <ServicesSection onSelectPackage={handleSelectPackage} />
-
-        {/* Client & Creator Endorsements */}
+        {/* 5. Client Testimonials */}
         <TestimonialsSection />
 
-        {/* Frequently Asked Questions */}
+        {/* 6. Our Services (Clean grid - Pricing removed as requested) */}
+        <ServicesSection onSelectService={handleSelectService} />
+
+        {/* 7. Our Process: 4-Step Production Roadmap & Timeline */}
+        <WorkflowSection />
+
+        {/* 8. Frequently Asked Questions */}
         <FAQSection />
 
-        {/* Direct Booking & Project Inquiry Form */}
-        <ContactSection initialPackage={selectedPackage} />
+        {/* 9. Direct Contact & Booking Inquiry Form */}
+        <ContactSection initialPackage={selectedService} />
       </main>
 
       {/* Global Footer */}
