@@ -62,7 +62,13 @@ export const ShortsCard: React.FC<ShortsCardProps> = ({ project, onSelect }) => 
         {/* Top bar indicators */}
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
           <span className="px-2 py-0.5 rounded-full bg-dark-950/80 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-brand-cyan border border-brand-cyan/30">
-            9:16 Reel
+            {project.category === 'motion'
+              ? 'Animation'
+              : project.category === 'ai'
+                ? 'AI Reel'
+                : project.title.toLowerCase().includes('real estate')
+                  ? 'Real Estate'
+                  : '9:16 Reel'}
           </span>
           {project.retentionRate && (
             <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 backdrop-blur-md text-[10px] font-bold text-emerald-400 border border-emerald-500/30 font-sans">

@@ -29,7 +29,7 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
       id: 'reels', 
       label: 'Shorts & Reels (9:16)', 
       icon: <Smartphone className="w-3.5 h-3.5" />,
-      count: PROJECTS.filter(p => p.category === 'reels').length 
+      count: PROJECTS.filter(p => p.format === '9:16' || p.category === 'reels').length 
     },
     { 
       id: 'motion', 
@@ -47,7 +47,9 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
 
   const filteredProjects = activeTab === 'all' 
     ? PROJECTS 
-    : PROJECTS.filter(p => p.category === activeTab);
+    : activeTab === 'reels'
+      ? PROJECTS.filter(p => p.format === '9:16' || p.category === 'reels')
+      : PROJECTS.filter(p => p.category === activeTab);
 
   const horizontalProjects = filteredProjects.filter(p => p.format === '16:9');
   const verticalProjects = filteredProjects.filter(p => p.format === '9:16');
@@ -112,7 +114,7 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
               />
             ))}
           </div>
-        ) : activeTab === 'youtube' || activeTab === 'motion' ? (
+        ) : activeTab === 'youtube' ? (
           /* Dedicated 16:9 Widescreen Grid */
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {horizontalProjects.map((project) => (
@@ -122,6 +124,92 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
                 onSelect={onSelectProject}
               />
             ))}
+          </div>
+        ) : activeTab === 'motion' ? (
+          /* Motion Graphics: Both Widescreen & Vertical Animation Shorts */
+          <div className="space-y-16">
+            {horizontalProjects.length > 0 && (
+              <div>
+                <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-white/10">
+                  <Film className="w-5 h-5 text-brand-cyan" />
+                  <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
+                    Widescreen Motion Graphics & SaaS Explainers (16:9)
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                  {horizontalProjects.map((project) => (
+                    <YouTubeCard
+                      key={project.id}
+                      project={project}
+                      onSelect={onSelectProject}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {verticalProjects.length > 0 && (
+              <div>
+                <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-white/10">
+                  <Smartphone className="w-5 h-5 text-sky-400" />
+                  <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
+                    Vertical Animation & SaaS Explainer Shorts (9:16)
+                  </h3>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                  {verticalProjects.map((project) => (
+                    <ShortsCard
+                      key={project.id}
+                      project={project}
+                      onSelect={onSelectProject}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ) : activeTab === 'ai' ? (
+          /* AI Video: 16:9 and 9:16 */
+          <div className="space-y-16">
+            {horizontalProjects.length > 0 && (
+              <div>
+                <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-white/10">
+                  <Film className="w-5 h-5 text-brand-cyan" />
+                  <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
+                    Generative AI Video Productions (16:9)
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                  {horizontalProjects.map((project) => (
+                    <YouTubeCard
+                      key={project.id}
+                      project={project}
+                      onSelect={onSelectProject}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {verticalProjects.length > 0 && (
+              <div>
+                <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-white/10">
+                  <Smartphone className="w-5 h-5 text-sky-400" />
+                  <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
+                    Vertical AI Video Visuals (9:16)
+                  </h3>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                  {verticalProjects.map((project) => (
+                    <ShortsCard
+                      key={project.id}
+                      project={project}
+                      onSelect={onSelectProject}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         ) : (
           /* All Work / Mixed Tab: Showcase layout matching reference flow */
@@ -161,7 +249,7 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
                 <div className="flex items-center gap-2.5">
                   <Smartphone className="w-5 h-5 text-sky-400" />
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
-                    Viral Shorts & Reels (9:16)
+                    Shorts, Reels & Animation (9:16)
                   </h3>
                 </div>
                 <button

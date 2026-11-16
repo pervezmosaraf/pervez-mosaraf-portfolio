@@ -10,7 +10,7 @@ export const PERSONAL_INFO = {
   yearsExperience: "5+ Years",
   stats: {
     totalViews: "15M+",
-    projectsCompleted: "180+",
+    projectsCompleted: "190+",
     avgRetention: "76%",
     avgTurnaround: "24-48h",
   },
@@ -198,6 +198,72 @@ export const PROJECTS: ProjectItem[] = [
     softwareUsed: ["After Effects", "Illustrator"],
     featured: true,
   },
+  {
+    id: "motion-saas-short",
+    title: "Creative SaaS Animation & UI Explainer",
+    client: "SaaS Product Client",
+    category: "motion",
+    format: "9:16",
+    aspectRatio: "9/16",
+    thumbnailUrl: "https://img.youtube.com/vi/k9wD5aSRTv4/hqdefault.jpg",
+    videoUrl: "https://www.youtube-nocookie.com/embed/k9wD5aSRTv4",
+    videoType: "youtube",
+    duration: "0:30",
+    views: "Featured SaaS",
+    retentionRate: "115%",
+    description: "High-impact vertical SaaS product animation showcasing UI workflows, animated dashboards, kinetic transitions, and punchy sound design.",
+    softwareUsed: ["After Effects", "Premiere Pro", "Illustrator"],
+    featured: true,
+    metrics: {
+      views: "Viral SaaS",
+      retention: "115% Retention",
+      subscribersGained: "Product Demo"
+    }
+  },
+  {
+    id: "motion-creative-short",
+    title: "Creative Animation & Dynamic Motion Graphics",
+    client: "Creative Animation Project",
+    category: "motion",
+    format: "9:16",
+    aspectRatio: "9/16",
+    thumbnailUrl: "https://img.youtube.com/vi/TQPSc1SZIfk/hqdefault.jpg",
+    videoUrl: "https://www.youtube-nocookie.com/embed/TQPSc1SZIfk",
+    videoType: "youtube",
+    duration: "0:25",
+    views: "Creative Edit",
+    retentionRate: "112%",
+    description: "Creative 2D/3D motion graphics animation with custom shape layers, character easing, kinetic typography, and synchronized sound design.",
+    softwareUsed: ["After Effects", "Illustrator", "Premiere Pro"],
+    featured: true,
+    metrics: {
+      views: "Motion Reel",
+      retention: "112% Retention",
+      subscribersGained: "Creative Showcase"
+    }
+  },
+  {
+    id: "motion-doc-short",
+    title: "Documentary Animation & Visual Storytelling",
+    client: "Documentary & Story Channel",
+    category: "motion",
+    format: "9:16",
+    aspectRatio: "9/16",
+    thumbnailUrl: "https://img.youtube.com/vi/hx65burWpBQ/hqdefault.jpg",
+    videoUrl: "https://www.youtube-nocookie.com/embed/hx65burWpBQ",
+    videoType: "youtube",
+    duration: "0:35",
+    views: "Story Animation",
+    retentionRate: "110%",
+    description: "Atmospheric documentary style animation featuring paper textures, map zooms, historical visual metaphors, and dramatic audio layering.",
+    softwareUsed: ["After Effects", "Photoshop", "Premiere Pro"],
+    featured: true,
+    metrics: {
+      views: "High Engagement",
+      retention: "110% Retention",
+      subscribersGained: "Story Driven"
+    }
+  },
 
   // ==========================================
   // 3. AI VIDEO & GENERATIVE VISUALS
@@ -257,6 +323,50 @@ export const PROJECTS: ProjectItem[] = [
   // ==========================================
   // 4. SHORTS & REELS (9:16 VERTICAL VIRAL EDITS)
   // ==========================================
+  {
+    id: "short-realestate-1",
+    title: "Real Estate Development Project Video Editing",
+    client: "Luxury Real Estate Developer",
+    category: "reels",
+    format: "9:16",
+    aspectRatio: "9/16",
+    thumbnailUrl: "https://img.youtube.com/vi/ft_5SXjVdFA/hqdefault.jpg",
+    videoUrl: "https://www.youtube-nocookie.com/embed/ft_5SXjVdFA",
+    videoType: "youtube",
+    duration: "0:45",
+    views: "Commercial Lead Gen",
+    retentionRate: "108%",
+    description: "Cinematic vertical video editing for real estate development, featuring smooth speed ramps, drone shot transitions, dynamic title tracking, and ambient music.",
+    softwareUsed: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
+    featured: true,
+    metrics: {
+      views: "Commercial Lead Gen",
+      retention: "108% Retention",
+      subscribersGained: "High CTR"
+    }
+  },
+  {
+    id: "short-realestate-2",
+    title: "Real Estate Architecture & Property Development Reel",
+    client: "Property & Architecture Agency",
+    category: "reels",
+    format: "9:16",
+    aspectRatio: "9/16",
+    thumbnailUrl: "https://img.youtube.com/vi/Mdcn3aPG4Co/hqdefault.jpg",
+    videoUrl: "https://www.youtube-nocookie.com/embed/Mdcn3aPG4Co",
+    videoType: "youtube",
+    duration: "0:40",
+    views: "Property Tour",
+    retentionRate: "107%",
+    description: "Polished real estate promo video with crisp color grading, rhythmic cut transitions, floor plan callouts, and elegant audio soundscape.",
+    softwareUsed: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
+    featured: true,
+    metrics: {
+      views: "Property Showcase",
+      retention: "107% Retention",
+      subscribersGained: "Client Favorite"
+    }
+  },
   {
     id: "short-1",
     title: "Viral Hook Short: Dynamic Cut & Kinetic Captions",
