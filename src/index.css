@@ -5,7 +5,7 @@
 @layer base {
   body {
     @apply bg-dark-950 text-sand-300 overflow-x-hidden font-sans;
-    background-color: #2a1832;
+    background-color: #100714;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -22,24 +22,24 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #2a1832;
+  background: #100714;
 }
 ::-webkit-scrollbar-thumb {
-  background: #4a2d56;
+  background: #2d1738;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #f58517;
 }
 
-/* Solid Panel & Card surfaces (60% #2a1832 & 30% #d9d0c9 borders) */
+/* Solid Panel & Card surfaces (60% #100714 & 30% #d9d0c9 borders) */
 .glass-panel {
-  background-color: #351f3e;
+  background-color: #1a0d21;
   border: 1px solid rgba(217, 208, 201, 0.15);
 }
 
 .glass-card {
-  background-color: #351f3e;
+  background-color: #1a0d21;
   border: 1px solid rgba(217, 208, 201, 0.15);
   transition: all 0.25s ease-in-out;
 }
@@ -47,7 +47,7 @@
 .glass-card:hover {
   border-color: #f58517;
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Studio timeline grid with solid subtle sandstone lines */

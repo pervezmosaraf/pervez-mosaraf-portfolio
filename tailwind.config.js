@@ -8,15 +8,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        // 60% Dominant Base Color (#2a1832 & solid harmonic plum-navy tones)
+        // 60% Dominant Base Color (#100714 & solid deep obsidian tones)
         dark: {
-          950: '#2a1832', // Exact 60% Dominant Canvas
-          900: '#351f3e', // Main Card & Surface
-          850: '#3f264a', // Elevated Surface
-          800: '#4a2d56', // Borders & Active Panels
-          750: '#553463',
-          700: '#613b71',
-          600: '#754888',
+          950: '#100714', // Exact 60% Dominant Canvas
+          900: '#1a0d21', // Main Card & Surface
+          850: '#23122c', // Elevated Surface
+          800: '#2d1738', // Borders & Active Panels
+          750: '#381c46',
+          700: '#432254',
+          600: '#572c6d',
         },
         // 30% Secondary Neutral Color (#d9d0c9 & warm sandstone tones)
         sand: {
@@ -44,7 +44,7 @@ export default {
           orange: '#f58517',
           hover: '#e0750e',
           sand: '#d9d0c9',
-          plum: '#2a1832',
+          dark: '#100714',
           cyan: '#f58517',
           blue: '#f58517',
           light: '#d9d0c9',
