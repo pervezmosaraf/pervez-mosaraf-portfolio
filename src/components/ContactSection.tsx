@@ -56,7 +56,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPackage }
             Let's Collaborate
           </div>
           <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-4">
-            Ready To Level Up Your <span className="text-gradient-accent">Content</span>?
+            Ready To Level Up Your <span className="text-accent">Content</span>?
           </h2>
           <p className="font-sans text-sand-300 text-sm sm:text-base leading-relaxed">
             Send me a message with your raw footage or channel link. I usually reply within 2–4 hours with initial thoughts and turnaround estimates.
@@ -275,7 +275,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialPackage }
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-gradient-to-r from-amber-400 via-accent to-accent-dark text-dark-950 font-display font-extrabold text-sm uppercase tracking-wider shadow-xl shadow-accent/25 hover:shadow-accent/40 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 group cursor-pointer"
+                    className="w-full py-4 rounded-xl bg-accent hover:bg-accent-hover text-dark-950 font-display font-extrabold text-sm uppercase tracking-wider shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 group cursor-pointer"
                   >
                     <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     Submit Project Brief

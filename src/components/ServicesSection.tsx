@@ -80,7 +80,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               What I Do
             </div>
             <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
-              Our <span className="text-gradient-accent">Services</span>
+              Our <span className="text-accent">Services</span>
             </h2>
             <p className="font-sans text-sand-300 text-sm sm:text-base max-w-xl mt-2 leading-relaxed">
               Comprehensive post-production solutions engineered for high retention, viral engagement, and broadcast visual quality.

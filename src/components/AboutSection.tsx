@@ -17,8 +17,8 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
-              {/* Glowing decorative backdrop in 10% Accent */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-accent-dark via-accent to-amber-300 rounded-3xl opacity-25 blur-xl group-hover:opacity-40 transition-opacity" />
+              {/* Solid decorative backdrop in 10% Accent */}
+              <div className="absolute -inset-2 bg-accent/20 rounded-3xl blur-xl group-hover:bg-accent/30 transition-all" />
               
               {/* Photo Frame */}
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-sand-300/20 shadow-2xl bg-dark-900">
@@ -28,13 +28,13 @@ export const AboutSection: React.FC = () => {
                   className="w-full h-[440px] sm:h-[500px] object-cover object-center filter brightness-[0.95] contrast-[1.05] hover:scale-102 transition-transform duration-700"
                 />
                 
-                {/* Gradient vignette */}
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-950/85 via-transparent to-transparent" />
+                {/* Vignette */}
+                <div className="absolute inset-0 bg-dark-950/40" />
 
                 {/* Floating Experience Badge */}
                 <div className="absolute bottom-4 left-4 right-4 glass-panel rounded-xl p-3.5 border border-sand-300/15 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center text-dark-950 font-display font-bold shadow-md shadow-accent/20">
+                    <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center text-dark-950 font-display font-bold shadow-md">
                       <Film className="w-5 h-5 text-dark-950" />
                     </div>
                     <div>
@@ -68,7 +68,7 @@ export const AboutSection: React.FC = () => {
             {/* Headline matching reference */}
             <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-[1.15]">
               Turning Raw Footage <br className="hidden sm:inline" />
-              Into <span className="text-gradient-accent">Pure Visual Art</span>
+              Into <span className="text-accent">Pure Visual Art</span>
             </h2>
 
             {/* Paragraphs in Inter & Sandstone (#d9d0c9) */}

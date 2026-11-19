@@ -5,7 +5,7 @@
 @layer base {
   body {
     @apply bg-dark-950 text-sand-300 overflow-x-hidden font-sans;
-    background-color: #0e1728;
+    background-color: #2a1832;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -17,79 +17,59 @@
   }
 }
 
-/* Custom scrollbar matching 60-30-10 palette */
+/* Custom scrollbar matching solid 60-30-10 palette */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0e1728;
+  background: #2a1832;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e2f4e;
+  background: #4a2d56;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #f58517;
 }
 
-/* Glassmorphism helpers with Sandstone (#d9d0c9) borders and Navy (#0e1728) depth */
+/* Solid Panel & Card surfaces (60% #2a1832 & 30% #d9d0c9 borders) */
 .glass-panel {
-  background: rgba(19, 31, 53, 0.78);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(217, 208, 201, 0.12);
+  background-color: #351f3e;
+  border: 1px solid rgba(217, 208, 201, 0.15);
 }
 
 .glass-card {
-  background: linear-gradient(145deg, rgba(24, 38, 64, 0.85) 0%, rgba(19, 31, 53, 0.95) 100%);
-  border: 1px solid rgba(217, 208, 201, 0.12);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #351f3e;
+  border: 1px solid rgba(217, 208, 201, 0.15);
+  transition: all 0.25s ease-in-out;
 }
 
 .glass-card:hover {
-  border-color: rgba(245, 133, 23, 0.5);
-  box-shadow: 0 14px 40px -10px rgba(245, 133, 23, 0.22);
+  border-color: #f58517;
   transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* 10% Accent Orbit Glow Ring Effect */
-.brand-orbit-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(245, 133, 23, 0.18) 0%, rgba(217, 208, 201, 0.04) 40%, transparent 70%);
-}
-
-.brand-ring-glow {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(245, 133, 23, 0.2);
-  box-shadow: 0 0 80px rgba(245, 133, 23, 0.15), inset 0 0 60px rgba(217, 208, 201, 0.05);
-}
-
-/* Studio timeline grid effect */
+/* Studio timeline grid with solid subtle sandstone lines */
 .studio-grid {
   background-size: 44px 44px;
   background-image: 
-    linear-gradient(to right, rgba(217, 208, 201, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(217, 208, 201, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(217, 208, 201, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(217, 208, 201, 0.04) 1px, transparent 1px);
 }
 
-/* Gradient text */
-.text-gradient-brand {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-sand-100 via-sand-200 to-accent;
-}
-
-.text-gradient-accent {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-accent to-accent-dark;
-}
-
+/* Solid Accent Texts - NO GRADIENTS */
+.text-gradient-brand,
+.text-gradient-accent,
 .text-gradient-cyan {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-accent to-accent-dark;
+  color: #f58517;
 }
 
-/* Brand Button Pills */
+/* Solid Brand Buttons - NO GRADIENTS */
 .btn-brand {
-  @apply px-6 py-3 rounded-full font-display font-bold text-xs uppercase tracking-wider text-dark-950 bg-gradient-to-r from-amber-400 via-accent to-accent-dark shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:scale-[1.02] active:scale-[0.98] transition-all;
+  @apply px-6 py-3 rounded-full font-display font-bold text-xs uppercase tracking-wider text-dark-950 bg-accent hover:bg-accent-hover transition-all shadow-md active:scale-[0.98];
 }
 
 .btn-secondary {
-  @apply px-6 py-3 rounded-full font-display font-semibold text-xs uppercase tracking-wider text-sand-200 glass-panel border border-sand-300/20 hover:border-accent/40 hover:text-white hover:bg-white/5 hover:scale-[1.02] active:scale-[0.98] transition-all;
+  @apply px-6 py-3 rounded-full font-display font-semibold text-xs uppercase tracking-wider text-sand-300 bg-dark-900 border border-sand-300/30 hover:border-accent hover:text-white transition-all active:scale-[0.98];
 }

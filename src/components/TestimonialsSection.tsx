@@ -18,7 +18,7 @@ export const TestimonialsSection: React.FC = () => {
             Social Proof
           </div>
           <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-4">
-            Client <span className="text-gradient-accent">Testimonials</span>
+            Client <span className="text-accent">Testimonials</span>
           </h2>
           <p className="font-sans text-sand-300 text-sm sm:text-base leading-relaxed">
             What creators, SaaS founders, and channel leads say about working with Pervez Mosaraf.

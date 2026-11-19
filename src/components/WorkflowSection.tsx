@@ -43,7 +43,7 @@ export const WorkflowSection: React.FC = () => {
             Production Roadmap
           </div>
           <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-4">
-            Our <span className="text-gradient-accent">Process</span>
+            Our <span className="text-accent">Process</span>
           </h2>
           <p className="font-sans text-sand-300 text-sm sm:text-base leading-relaxed">
             Precision post-production modeled after top YouTube creators and commercial studios.
@@ -97,9 +97,9 @@ export const WorkflowSection: React.FC = () => {
             <span className="text-emerald-400 font-semibold">04 4K DELIVERY</span>
           </div>
 
-          {/* Timeline Bar with glowing ticks */}
+          {/* Timeline Bar with solid accent */}
           <div className="w-full h-2.5 rounded-full bg-dark-950 p-0.5 border border-sand-300/15 relative overflow-hidden">
-            <div className="h-full rounded-full bg-gradient-to-r from-amber-400 via-accent to-accent-dark w-full animate-pulse-subtle" />
+            <div className="h-full rounded-full bg-accent w-full" />
           </div>
           
           <div className="flex items-center justify-between mt-3 text-[11px] font-sans text-sand-300">

@@ -64,19 +64,19 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
         
         {/* Section Header (matching reference design flow) */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-dark-900/60 border border-accent/30 text-accent text-xs font-semibold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-dark-900 border border-accent/30 text-accent text-xs font-semibold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             Curated Portfolio
           </div>
           <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-4">
-            Featured <span className="text-gradient-accent">Work</span>
+            Featured <span className="text-accent">Work</span>
           </h2>
           <p className="font-sans text-sand-300 text-sm sm:text-base leading-relaxed">
             From 20-minute deep-dive YouTube documentaries to viral 30-second vertical reels that stop the scroll. Click any project to watch in 4K.
           </p>
         </div>
 
-        {/* Filter Navigation Tabs */}
+        {/* Filter Navigation Tabs - Solid Styling */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-14">
           {filterTabs.map((tab) => {
             const isActive = activeTab === tab.id;
@@ -86,14 +86,14 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-display font-semibold transition-all duration-200 cursor-pointer ${
                   isActive
-                    ? 'bg-gradient-to-r from-amber-400 via-accent to-accent-dark text-dark-950 shadow-lg shadow-accent/25 scale-105 font-bold'
-                    : 'glass-panel text-sand-300 hover:text-white hover:border-accent/40'
+                    ? 'bg-accent text-dark-950 shadow-md scale-105 font-bold'
+                    : 'bg-dark-900 text-sand-300 border border-sand-300/20 hover:text-white hover:border-accent'
                 }`}
               >
                 <span>{tab.icon}</span>
                 <span>{tab.label}</span>
                 <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
-                  isActive ? 'bg-dark-950/25 text-dark-950' : 'bg-sand-300/10 text-sand-400'
+                  isActive ? 'bg-dark-950/20 text-dark-950' : 'bg-dark-950/40 text-sand-300'
                 }`}>
                   {tab.count}
                 </span>

@@ -8,17 +8,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        // 60% Dominant Color (#0e1728 & harmonic deep midnight navy tones)
+        // 60% Dominant Base Color (#2a1832 & solid harmonic plum-navy tones)
         dark: {
-          950: '#0e1728', // Exact 60% Dominant Canvas
-          900: '#131f35', // Main Card & Panel Surface
-          850: '#182640', // Elevated Surfaces & Toolbars
-          800: '#1e2f4e', // Borders & Active Panels
-          750: '#253a5e',
-          700: '#2d456f',
-          600: '#3d5a8c',
+          950: '#2a1832', // Exact 60% Dominant Canvas
+          900: '#351f3e', // Main Card & Surface
+          850: '#3f264a', // Elevated Surface
+          800: '#4a2d56', // Borders & Active Panels
+          750: '#553463',
+          700: '#613b71',
+          600: '#754888',
         },
-        // 30% Secondary Neutral (#d9d0c9 & warm sandstone / pearl tints)
+        // 30% Secondary Neutral Color (#d9d0c9 & warm sandstone tones)
         sand: {
           50: '#faf8f6',
           100: '#f5efe8',
@@ -30,26 +30,24 @@ export default {
           700: '#6d6055',
           800: '#4e443c',
         },
-        // 10% Accent Color (#f58517 & vibrant amber/tangerine orange)
+        // 10% Accent Solid Color (#f58517 & solid vivid orange)
         accent: {
           DEFAULT: '#f58517', // Exact 10% Accent
-          light: '#fb923c',
-          dark: '#ea580c',
-          glow: '#ff9838',
+          hover: '#e0750e',
+          light: '#f79a3b',
+          dark: '#d66f0d',
           subtle: 'rgba(245, 133, 23, 0.15)',
         },
-        // Brand alias for unified tokens
+        // Brand aliases for solid tokens
         brand: {
           DEFAULT: '#f58517',
           orange: '#f58517',
-          amber: '#fb923c',
-          dark: '#ea580c',
-          glow: '#ff9838',
+          hover: '#e0750e',
           sand: '#d9d0c9',
-          navy: '#0e1728',
-          cyan: '#f58517', // aliased to accent for backwards compatibility
-          blue: '#ea580c',
-          light: '#fed7aa',
+          plum: '#2a1832',
+          cyan: '#f58517',
+          blue: '#f58517',
+          light: '#d9d0c9',
           accent: '#f58517',
         }
       },
@@ -60,16 +58,11 @@ export default {
       animation: {
         'pulse-subtle': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 3s ease-in-out infinite alternate',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-8px)' },
-        },
-        glow: {
-          '0%': { filter: 'drop-shadow(0 0 15px rgba(245, 133, 23, 0.25))' },
-          '100%': { filter: 'drop-shadow(0 0 35px rgba(234, 88, 12, 0.5))' },
         }
       }
     },

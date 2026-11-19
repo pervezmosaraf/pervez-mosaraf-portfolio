@@ -42,7 +42,7 @@ export const BeforeAfterSection: React.FC = () => {
             The Edit Magic
           </div>
           <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-4">
-            Interactive <span className="text-gradient-accent">Before & After</span>
+            Interactive <span className="text-accent">Before & After</span>
           </h2>
           <p className="font-sans text-sand-300 text-sm sm:text-base leading-relaxed">
             Drag the slider to see how raw, flat camera files are transformed into high-impact, color-graded masterpieces with motion graphics and sound design.
@@ -56,8 +56,8 @@ export const BeforeAfterSection: React.FC = () => {
                 onClick={() => setActivePairIndex(idx)}
                 className={`px-4 py-2 rounded-full text-xs font-display font-semibold transition-all cursor-pointer ${
                   activePairIndex === idx
-                    ? 'bg-gradient-to-r from-amber-400 via-accent to-accent-dark text-dark-950 font-bold shadow-md shadow-accent/25'
-                    : 'glass-panel text-sand-300 hover:text-white hover:border-accent/40'
+                    ? 'bg-accent text-dark-950 font-bold shadow-md'
+                    : 'glass-panel text-sand-300 hover:text-white hover:border-accent'
                 }`}
               >
                 Comparison #{idx + 1}: {pair.title.split(' ')[0]}
@@ -107,7 +107,7 @@ export const BeforeAfterSection: React.FC = () => {
 
             {/* Edited Label */}
             <div className="absolute top-4 right-4 z-20">
-              <span className="px-3 py-1 rounded-md bg-gradient-to-r from-amber-400 via-accent to-accent-dark text-dark-950 text-xs font-display font-extrabold uppercase tracking-wider shadow-lg shadow-accent/30">
+              <span className="px-3 py-1 rounded-md bg-accent text-dark-950 text-xs font-display font-extrabold uppercase tracking-wider shadow-md">
                 Final Master + Color VFX
               </span>
             </div>

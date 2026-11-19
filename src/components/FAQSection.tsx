@@ -24,7 +24,7 @@ export const FAQSection: React.FC = () => {
             Frequently Asked Questions
           </div>
           <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-4">
-            Everything You Need <span className="text-gradient-accent">To Know</span>
+            Everything You Need <span className="text-accent">To Know</span>
           </h2>
           <p className="font-sans text-sand-300 text-sm sm:text-base leading-relaxed">
             Got questions about file formats, revision speed, or licensing? Here are the answers.
