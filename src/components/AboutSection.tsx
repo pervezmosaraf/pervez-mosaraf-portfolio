@@ -4,10 +4,10 @@ import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-dark-900/40 border-y border-white/5">
+    <section id="about" className="py-24 relative overflow-hidden bg-dark-900/40 border-y border-sand-300/10">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-brand-blue/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-80 h-80 bg-brand-cyan/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-accent-dark/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-10 w-80 h-80 bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -17,11 +17,11 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
-              {/* Glowing decorative backdrop */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-brand-blue via-brand-cyan to-sky-300 rounded-3xl opacity-30 blur-xl group-hover:opacity-50 transition-opacity" />
+              {/* Glowing decorative backdrop in 10% Accent */}
+              <div className="absolute -inset-2 bg-gradient-to-tr from-accent-dark via-accent to-amber-300 rounded-3xl opacity-25 blur-xl group-hover:opacity-40 transition-opacity" />
               
               {/* Photo Frame */}
-              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-white/10 shadow-2xl bg-dark-900">
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-sand-300/20 shadow-2xl bg-dark-900">
                 <img
                   src="/pervez.jpg"
                   alt="Pervez Mosaraf - Video Editor & Motion Graphics Designer"
@@ -29,19 +29,19 @@ export const AboutSection: React.FC = () => {
                 />
                 
                 {/* Gradient vignette */}
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-950/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-950/85 via-transparent to-transparent" />
 
                 {/* Floating Experience Badge */}
-                <div className="absolute bottom-4 left-4 right-4 glass-panel rounded-xl p-3.5 border border-white/10 flex items-center justify-between">
+                <div className="absolute bottom-4 left-4 right-4 glass-panel rounded-xl p-3.5 border border-sand-300/15 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center text-dark-950 font-display font-bold">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center text-dark-950 font-display font-bold shadow-md shadow-accent/20">
                       <Film className="w-5 h-5 text-dark-950" />
                     </div>
                     <div>
                       <div className="font-display font-bold text-sm text-white">
                         {PERSONAL_INFO.name}
                       </div>
-                      <div className="text-[11px] text-brand-cyan font-medium">
+                      <div className="text-[11px] text-accent font-medium">
                         {PERSONAL_INFO.title}
                       </div>
                     </div>
@@ -60,7 +60,7 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-7 space-y-6">
             
             {/* Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border border-brand-cyan/30 text-xs font-semibold text-brand-cyan">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel border border-accent/30 text-xs font-semibold text-accent">
               <Sparkles className="w-3.5 h-3.5" />
               About The Editor
             </div>
@@ -68,47 +68,47 @@ export const AboutSection: React.FC = () => {
             {/* Headline matching reference */}
             <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-[1.15]">
               Turning Raw Footage <br className="hidden sm:inline" />
-              Into <span className="text-gradient-cyan">Pure Visual Art</span>
+              Into <span className="text-gradient-accent">Pure Visual Art</span>
             </h2>
 
-            {/* Paragraphs in Inter */}
-            <div className="space-y-4 text-slate-300 font-sans text-sm sm:text-base leading-relaxed">
+            {/* Paragraphs in Inter & Sandstone (#d9d0c9) */}
+            <div className="space-y-4 text-sand-300 font-sans text-sm sm:text-base leading-relaxed">
               <p>
                 Hi, I'm <strong className="text-white">Pervez Mosaraf</strong>. I specialize in turning complex ideas and unedited footage into high-retention, cinematic video content that stops the scroll and inspires audiences to take action.
               </p>
               <p>
                 Whether it's a 20-minute deep-dive YouTube documentary, viral 9:16 shorts engineered for 100%+ retention loops, or a high-converting SaaS product animation, I blend rhythm-accurate pacing, custom 2D/3D motion graphics, and Hollywood-level sound design into every single frame.
               </p>
-              <p className="text-slate-400 text-xs sm:text-sm italic border-l-2 border-brand-cyan pl-3.5">
+              <p className="text-sand-400 text-xs sm:text-sm italic border-l-2 border-accent pl-3.5">
                 "Every cut serves the story. Every sound effect heightens the emotion. No filler, pure engagement."
               </p>
             </div>
 
-            {/* 3 Metric Counters matching reference */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
-              <div className="glass-card rounded-2xl p-4 sm:p-5 border border-white/5">
+            {/* 3 Metric Counters */}
+            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-sand-300/10">
+              <div className="glass-card rounded-2xl p-4 sm:p-5 border border-sand-300/10">
                 <div className="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
                   500+
                 </div>
-                <div className="text-xs sm:text-sm text-slate-400 font-sans mt-1">
+                <div className="text-xs sm:text-sm text-sand-400 font-sans mt-1">
                   Projects Delivered
                 </div>
               </div>
 
-              <div className="glass-card rounded-2xl p-4 sm:p-5 border border-white/5">
-                <div className="font-display font-extrabold text-2xl sm:text-4xl text-brand-cyan tracking-tight">
+              <div className="glass-card rounded-2xl p-4 sm:p-5 border border-sand-300/10">
+                <div className="font-display font-extrabold text-2xl sm:text-4xl text-accent tracking-tight">
                   50+
                 </div>
-                <div className="text-xs sm:text-sm text-slate-400 font-sans mt-1">
+                <div className="text-xs sm:text-sm text-sand-400 font-sans mt-1">
                   Global Clients
                 </div>
               </div>
 
-              <div className="glass-card rounded-2xl p-4 sm:p-5 border border-white/5">
+              <div className="glass-card rounded-2xl p-4 sm:p-5 border border-sand-300/10">
                 <div className="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
                   5+ Yrs
                 </div>
-                <div className="text-xs sm:text-sm text-slate-400 font-sans mt-1">
+                <div className="text-xs sm:text-sm text-sand-400 font-sans mt-1">
                   Industry Expertise
                 </div>
               </div>

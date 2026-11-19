@@ -53,7 +53,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark-950 text-slate-100 flex flex-col font-sans selection:bg-brand-cyan/25 selection:text-brand-cyan">
+    <div className="min-h-screen bg-dark-950 text-sand-300 flex flex-col font-sans selection:bg-accent/30 selection:text-sand-100">
       {/* Sticky Navigation */}
       <Navbar onOpenShowreel={handleOpenShowreel} />
 

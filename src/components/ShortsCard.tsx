@@ -33,8 +33,8 @@ export const ShortsCard: React.FC<ShortsCardProps> = ({ project, onSelect }) => 
       onMouseLeave={handleMouseLeave}
       className="group relative cursor-pointer flex flex-col items-center"
     >
-      {/* Smartphone-inspired bezel shell with Brand Cyan/Blue glow */}
-      <div className="relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-dark-900 border-2 border-white/10 group-hover:border-brand-cyan/60 shadow-xl group-hover:shadow-2xl group-hover:shadow-brand-blue/30 transition-all duration-300 transform group-hover:-translate-y-1.5">
+      {/* Smartphone-inspired bezel shell with 60% Dominant Base & 10% Accent Glow */}
+      <div className="relative w-full aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden bg-dark-900 border-2 border-sand-300/15 group-hover:border-accent/60 shadow-xl group-hover:shadow-2xl group-hover:shadow-accent/25 transition-all duration-300 transform group-hover:-translate-y-1.5">
         
         {/* Dynamic Video or Thumbnail */}
         {project.videoType === 'mp4' ? (
@@ -61,7 +61,7 @@ export const ShortsCard: React.FC<ShortsCardProps> = ({ project, onSelect }) => 
 
         {/* Top bar indicators */}
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-          <span className="px-2 py-0.5 rounded-full bg-dark-950/80 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-brand-cyan border border-brand-cyan/30">
+          <span className="px-2 py-0.5 rounded-full bg-dark-950/80 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-accent border border-accent/30 font-sans">
             {project.category === 'motion'
               ? 'Animation'
               : project.category === 'ai'
@@ -77,9 +77,9 @@ export const ShortsCard: React.FC<ShortsCardProps> = ({ project, onSelect }) => 
           )}
         </div>
 
-        {/* Center Hover Action Button with Brand Gradient */}
+        {/* Center Hover Action Button with 10% Accent (#f58517) */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className={`w-14 h-14 rounded-full bg-gradient-to-tr from-brand-cyan to-brand-blue text-dark-950 flex items-center justify-center shadow-xl shadow-brand-blue/50 transition-all duration-300 ${
+          <div className={`w-14 h-14 rounded-full bg-gradient-to-tr from-amber-400 via-accent to-accent-dark text-dark-950 flex items-center justify-center shadow-xl shadow-accent/50 transition-all duration-300 ${
             isHovered ? 'scale-110 opacity-100' : 'scale-90 opacity-0 group-hover:opacity-100'
           }`}>
             <Play className="w-6 h-6 fill-dark-950 text-dark-950 translate-x-[1.5px]" />
@@ -88,20 +88,20 @@ export const ShortsCard: React.FC<ShortsCardProps> = ({ project, onSelect }) => 
 
         {/* Bottom Details (Title, Views, Client) */}
         <div className="absolute bottom-3 left-3 right-3 z-10 pointer-events-none">
-          <div className="text-[11px] font-semibold text-brand-cyan mb-1 line-clamp-1 font-sans">
+          <div className="text-[11px] font-semibold text-sand-400 mb-1 line-clamp-1 font-sans">
             {project.client}
           </div>
-          <h4 className="text-white font-display font-bold text-sm sm:text-base leading-tight line-clamp-2 mb-2 group-hover:text-brand-cyan transition-colors">
+          <h4 className="text-white font-display font-bold text-sm sm:text-base leading-tight line-clamp-2 mb-2 group-hover:text-accent transition-colors">
             {project.title}
           </h4>
 
           {/* Metrics bar */}
-          <div className="flex items-center justify-between text-[11px] pt-2 border-t border-white/10 text-slate-300 font-sans">
+          <div className="flex items-center justify-between text-[11px] pt-2 border-t border-sand-300/10 text-sand-300 font-sans">
             <span className="flex items-center gap-1 font-semibold text-white">
-              <Eye className="w-3.5 h-3.5 text-brand-cyan" /> {project.views}
+              <Eye className="w-3.5 h-3.5 text-accent" /> {project.views}
             </span>
-            <span className="flex items-center gap-1 text-[10px] text-slate-400">
-              <Sparkles className="w-3 h-3 text-sky-400" /> Viral Cut
+            <span className="flex items-center gap-1 text-[10px] text-sand-400">
+              <Sparkles className="w-3 h-3 text-accent" /> Viral Cut
             </span>
           </div>
         </div>
@@ -111,7 +111,7 @@ export const ShortsCard: React.FC<ShortsCardProps> = ({ project, onSelect }) => 
       {/* Software pills under the card */}
       <div className="w-full flex items-center justify-center gap-1.5 mt-2.5">
         {project.softwareUsed.slice(0, 2).map((s) => (
-          <span key={s} className="px-2 py-0.5 rounded text-[10px] bg-white/5 text-slate-400 border border-white/5 font-sans">
+          <span key={s} className="px-2 py-0.5 rounded text-[10px] bg-dark-900/80 text-sand-400 border border-sand-300/10 font-sans">
             {s}
           </span>
         ))}

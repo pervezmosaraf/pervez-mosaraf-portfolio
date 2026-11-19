@@ -8,13 +8,13 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="border-t border-white/10 bg-dark-950 py-12 relative">
+    <footer className="border-t border-sand-300/10 bg-dark-950 py-12 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/5">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-sand-300/10">
           
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-dark-900 border border-white/10 p-1 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-dark-900 border border-sand-300/15 p-1 flex items-center justify-center">
               <img 
                 src="/logo.png" 
                 alt="Pervez Mosaraf Logo" 
@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
               <span className="font-display font-bold text-base text-white">
                 {PERSONAL_INFO.name}
               </span>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-sand-400 font-sans">
                 {PERSONAL_INFO.title}
               </p>
             </div>
@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
               href={PERSONAL_INFO.socials.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full glass-panel hover:border-red-500/40 text-slate-400 hover:text-red-500 flex items-center justify-center transition-all"
+              className="w-10 h-10 rounded-full glass-panel hover:border-accent/50 text-sand-400 hover:text-accent flex items-center justify-center transition-all"
               aria-label="YouTube"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
               href={PERSONAL_INFO.socials.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full glass-panel hover:border-pink-500/40 text-slate-400 hover:text-pink-500 flex items-center justify-center transition-all"
+              className="w-10 h-10 rounded-full glass-panel hover:border-accent/50 text-sand-400 hover:text-accent flex items-center justify-center transition-all"
               aria-label="Instagram"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
               href={PERSONAL_INFO.socials.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full glass-panel hover:border-brand-cyan/40 text-slate-400 hover:text-brand-cyan flex items-center justify-center transition-all"
+              className="w-10 h-10 rounded-full glass-panel hover:border-accent/50 text-sand-400 hover:text-accent flex items-center justify-center transition-all"
               aria-label="Twitter / X"
             >
               <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
               href={PERSONAL_INFO.socials.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full glass-panel hover:border-emerald-500/40 text-slate-400 hover:text-emerald-400 flex items-center justify-center transition-all"
+              className="w-10 h-10 rounded-full glass-panel hover:border-emerald-500/40 text-sand-400 hover:text-emerald-400 flex items-center justify-center transition-all"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-4 h-4" />
@@ -87,17 +87,17 @@ export const Footer: React.FC = () => {
           {/* Back to top */}
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-brand-cyan transition-colors cursor-pointer"
+            className="flex items-center gap-2 text-xs font-semibold text-sand-400 hover:text-accent transition-colors cursor-pointer"
           >
             Back to Top
-            <div className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+            <div className="w-7 h-7 rounded-full bg-dark-900 border border-sand-300/15 flex items-center justify-center">
               <ArrowUp className="w-3.5 h-3.5" />
             </div>
           </button>
 
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-sand-500 font-sans gap-4">
           <p>© {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.</p>
           <p className="flex items-center gap-1">
             Engineered for high-retention video storytelling & motion design.

@@ -4,8 +4,8 @@
 
 @layer base {
   body {
-    @apply bg-dark-950 text-slate-200 overflow-x-hidden font-sans;
-    background-color: #07090e;
+    @apply bg-dark-950 text-sand-300 overflow-x-hidden font-sans;
+    background-color: #0e1728;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -13,79 +13,83 @@
   }
 
   p {
-    @apply font-sans;
+    @apply font-sans text-sand-300;
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar matching 60-30-10 palette */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #07090e;
+  background: #0e1728;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #1e2f4e;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0284c7;
+  background: #f58517;
 }
 
-/* Glassmorphism helpers */
+/* Glassmorphism helpers with Sandstone (#d9d0c9) borders and Navy (#0e1728) depth */
 .glass-panel {
-  background: rgba(12, 16, 23, 0.75);
+  background: rgba(19, 31, 53, 0.78);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(217, 208, 201, 0.12);
 }
 
 .glass-card {
-  background: linear-gradient(145deg, rgba(17, 23, 34, 0.8) 0%, rgba(10, 14, 21, 0.9) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(145deg, rgba(24, 38, 64, 0.85) 0%, rgba(19, 31, 53, 0.95) 100%);
+  border: 1px solid rgba(217, 208, 201, 0.12);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
-  border-color: rgba(56, 189, 248, 0.4);
-  box-shadow: 0 12px 35px -10px rgba(2, 132, 199, 0.25);
+  border-color: rgba(245, 133, 23, 0.5);
+  box-shadow: 0 14px 40px -10px rgba(245, 133, 23, 0.22);
   transform: translateY(-3px);
 }
 
-/* Reference Design Radial Ambient Ring Effect (Brand Cyan/Blue) */
+/* 10% Accent Orbit Glow Ring Effect */
 .brand-orbit-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.22) 0%, rgba(56, 189, 248, 0.08) 35%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(245, 133, 23, 0.18) 0%, rgba(217, 208, 201, 0.04) 40%, transparent 70%);
 }
 
 .brand-ring-glow {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(56, 189, 248, 0.15);
-  box-shadow: 0 0 80px rgba(2, 132, 199, 0.2), inset 0 0 60px rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(245, 133, 23, 0.2);
+  box-shadow: 0 0 80px rgba(245, 133, 23, 0.15), inset 0 0 60px rgba(217, 208, 201, 0.05);
 }
 
 /* Studio timeline grid effect */
 .studio-grid {
   background-size: 44px 44px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(217, 208, 201, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(217, 208, 201, 0.03) 1px, transparent 1px);
 }
 
 /* Gradient text */
 .text-gradient-brand {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-brand-light to-brand-cyan;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-sand-100 via-sand-200 to-accent;
+}
+
+.text-gradient-accent {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-accent to-accent-dark;
 }
 
 .text-gradient-cyan {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-light via-brand-cyan to-brand-blue;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-accent to-accent-dark;
 }
 
-/* Brand Button Pill */
+/* Brand Button Pills */
 .btn-brand {
-  @apply px-6 py-3 rounded-full font-display font-bold text-xs uppercase tracking-wider text-dark-950 bg-gradient-to-r from-brand-cyan via-sky-400 to-brand-blue shadow-lg shadow-brand-blue/30 hover:shadow-brand-cyan/50 hover:scale-[1.02] active:scale-[0.98] transition-all;
+  @apply px-6 py-3 rounded-full font-display font-bold text-xs uppercase tracking-wider text-dark-950 bg-gradient-to-r from-amber-400 via-accent to-accent-dark shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:scale-[1.02] active:scale-[0.98] transition-all;
 }
 
 .btn-secondary {
-  @apply px-6 py-3 rounded-full font-display font-semibold text-xs uppercase tracking-wider text-white glass-panel border border-white/10 hover:border-brand-cyan/40 hover:bg-white/5 hover:scale-[1.02] active:scale-[0.98] transition-all;
+  @apply px-6 py-3 rounded-full font-display font-semibold text-xs uppercase tracking-wider text-sand-200 glass-panel border border-sand-300/20 hover:border-accent/40 hover:text-white hover:bg-white/5 hover:scale-[1.02] active:scale-[0.98] transition-all;
 }

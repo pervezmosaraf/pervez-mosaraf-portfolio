@@ -55,28 +55,28 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
   const verticalProjects = filteredProjects.filter(p => p.format === '9:16');
 
   return (
-    <section id="portfolio" className="py-24 relative overflow-hidden">
+    <section id="portfolio" className="py-24 relative overflow-hidden bg-dark-950">
       
       {/* Background ambient lighting */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-blue/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header (matching reference design flow) */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-dark-900/60 border border-accent/30 text-accent text-xs font-semibold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             Curated Portfolio
           </div>
           <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-4">
-            Featured <span className="text-gradient-cyan">Work</span>
+            Featured <span className="text-gradient-accent">Work</span>
           </h2>
-          <p className="font-sans text-slate-400 text-sm sm:text-base leading-relaxed">
+          <p className="font-sans text-sand-300 text-sm sm:text-base leading-relaxed">
             From 20-minute deep-dive YouTube documentaries to viral 30-second vertical reels that stop the scroll. Click any project to watch in 4K.
           </p>
         </div>
 
-        {/* Filter Navigation Tabs (matching reference design button pills) */}
+        {/* Filter Navigation Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-14">
           {filterTabs.map((tab) => {
             const isActive = activeTab === tab.id;
@@ -86,14 +86,14 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-display font-semibold transition-all duration-200 cursor-pointer ${
                   isActive
-                    ? 'bg-gradient-to-r from-brand-cyan to-brand-blue text-dark-950 shadow-lg shadow-brand-blue/30 scale-105 font-bold'
-                    : 'glass-panel text-slate-300 hover:text-white hover:border-brand-cyan/30'
+                    ? 'bg-gradient-to-r from-amber-400 via-accent to-accent-dark text-dark-950 shadow-lg shadow-accent/25 scale-105 font-bold'
+                    : 'glass-panel text-sand-300 hover:text-white hover:border-accent/40'
                 }`}
               >
                 <span>{tab.icon}</span>
                 <span>{tab.label}</span>
                 <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
-                  isActive ? 'bg-dark-950/20 text-dark-950' : 'bg-white/10 text-slate-400'
+                  isActive ? 'bg-dark-950/25 text-dark-950' : 'bg-sand-300/10 text-sand-400'
                 }`}>
                   {tab.count}
                 </span>
@@ -130,8 +130,8 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
           <div className="space-y-16">
             {horizontalProjects.length > 0 && (
               <div>
-                <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-white/10">
-                  <Film className="w-5 h-5 text-brand-cyan" />
+                <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-sand-300/10">
+                  <Film className="w-5 h-5 text-accent" />
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
                     Widescreen Motion Graphics & SaaS Explainers (16:9)
                   </h3>
@@ -150,8 +150,8 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
 
             {verticalProjects.length > 0 && (
               <div>
-                <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-white/10">
-                  <Smartphone className="w-5 h-5 text-sky-400" />
+                <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-sand-300/10">
+                  <Smartphone className="w-5 h-5 text-accent-light" />
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
                     Vertical Animation & SaaS Explainer Shorts (9:16)
                   </h3>
@@ -173,8 +173,8 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
           <div className="space-y-16">
             {horizontalProjects.length > 0 && (
               <div>
-                <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-white/10">
-                  <Film className="w-5 h-5 text-brand-cyan" />
+                <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-sand-300/10">
+                  <Film className="w-5 h-5 text-accent" />
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
                     Generative AI Video Productions (16:9)
                   </h3>
@@ -193,8 +193,8 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
 
             {verticalProjects.length > 0 && (
               <div>
-                <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-white/10">
-                  <Smartphone className="w-5 h-5 text-sky-400" />
+                <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-sand-300/10">
+                  <Smartphone className="w-5 h-5 text-accent-light" />
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
                     Vertical AI Video Visuals (9:16)
                   </h3>
@@ -212,21 +212,21 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
             )}
           </div>
         ) : (
-          /* All Work / Mixed Tab: Showcase layout matching reference flow */
+          /* All Work / Mixed Tab */
           <div className="space-y-16">
             
             {/* Long-Form & Motion Graphics Section */}
             <div>
-              <div className="flex items-center justify-between mb-6 pb-3 border-b border-white/10">
+              <div className="flex items-center justify-between mb-6 pb-3 border-b border-sand-300/10">
                 <div className="flex items-center gap-2.5">
-                  <Film className="w-5 h-5 text-brand-cyan" />
+                  <Film className="w-5 h-5 text-accent" />
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
                     Long-Form YouTube & Motion Graphics (16:9)
                   </h3>
                 </div>
                 <button
                   onClick={() => setActiveTab('youtube')}
-                  className="text-xs font-display font-semibold text-brand-cyan hover:underline cursor-pointer"
+                  className="text-xs font-display font-semibold text-accent hover:underline cursor-pointer"
                 >
                   View all 16:9 →
                 </button>
@@ -245,16 +245,16 @@ export const PortfolioGrid: React.FC<PortfolioGridProps> = ({ onSelectProject })
 
             {/* Short-Form Viral Reels & AI Visuals Section */}
             <div>
-              <div className="flex items-center justify-between mb-6 pb-3 border-b border-white/10">
+              <div className="flex items-center justify-between mb-6 pb-3 border-b border-sand-300/10">
                 <div className="flex items-center gap-2.5">
-                  <Smartphone className="w-5 h-5 text-sky-400" />
+                  <Smartphone className="w-5 h-5 text-accent-light" />
                   <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
                     Shorts, Reels & Animation (9:16)
                   </h3>
                 </div>
                 <button
                   onClick={() => setActiveTab('reels')}
-                  className="text-xs font-display font-semibold text-sky-400 hover:underline cursor-pointer"
+                  className="text-xs font-display font-semibold text-accent hover:underline cursor-pointer"
                 >
                   View all 9:16 →
                 </button>
